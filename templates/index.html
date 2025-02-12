@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Sentiment & Investment Advisor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>AI Stock Sentiment & Investment Advisor</h1>
+    <form action="/advice" method="POST">
+        <label for="sentiment_score">Sentiment Score of Selected Article:</label>
+        <input type="text" id="sentiment_score" name="sentiment_score"><br><br>
+
+        <label for="stock_data">Stock Data (e.g., {symbol: 'AAPL', price: 150}):</label>
+        <input type="text" id="stock_data" name="stock_data"><br><br>
+
+        <input type="submit" value="Get Investment Advice">
+    </form>
+</body>
+</html>
