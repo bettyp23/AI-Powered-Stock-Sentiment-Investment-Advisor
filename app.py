@@ -21,9 +21,10 @@ def index():
 def get_advice():
     sentiment_score = request.form['sentiment_score']
     stock_data = request.form['stock_data']
+    sector = request.form['sector']
     
     # Fetch investment advice
-    advice = get_investment_advice(sentiment_score, stock_data)
+    advice = get_investment_advice(sentiment_score, stock_data, sector)
     
     return render_template('advice.html', advice=advice)
 

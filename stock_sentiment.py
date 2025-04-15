@@ -5,8 +5,13 @@ from transformers import pipeline
 # Sentiment analysis pipeline
 sentiment_pipeline = pipeline('sentiment-analysis', model='finiteautomata/bertweet-base-sentiment-analysis')
 
-def get_investment_advice(sentiment_score, stock_data):
-    prompt = f"Given the sentiment score of {sentiment_score}, derived from a relevant news headline and article that provides insight into public perception, how might this influence stock prices? Along with the provided stock data {stock_data}, what would your investment recommendation be? Where should I invest?"
+def get_investment_advice(sentiment_score, stock_data, sector):
+    prompt = (
+    f"Given the overall sentiment score of {sentiment_score} from news articles, and stock name and data {stock_data}, "
+    f"considering that the company operates in the {sector} sector, "
+    f"what is your investment recommendation? What should an investor consider?"
+)
+
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[

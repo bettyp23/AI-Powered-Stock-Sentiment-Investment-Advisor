@@ -9,11 +9,23 @@
 <body>
     <h1>AI Stock Sentiment & Investment Advisor</h1>
     <form action="/advice" method="POST">
-        <label for="sentiment_score">Sentiment Score of Selected Article:</label>
+        <label for="sentiment_score">Overall Sentiment Score of Articles:</label>
         <input type="text" id="sentiment_score" name="sentiment_score"><br><br>
 
-        <label for="stock_data">Stock Data (e.g., {symbol: 'AAPL', price: 150}):</label>
+        <label for="stock_data">Stock Name and Data:</label>
         <input type="text" id="stock_data" name="stock_data"><br><br>
+
+        <label for="sector">Select Industry/Sector:</label>
+            <select id="sector" name="sector">
+                <option value="Technology">Technology</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Finance">Finance</option>
+                <option value="Energy">Energy</option>
+                <option value="Retail">Retail</option>
+                <option value="Transportation">Transportation</option>
+                <option value="Other">Other</option>
+            </select><br><br>
+
 
         <input type="submit" value="Get Investment Advice">
     </form>
