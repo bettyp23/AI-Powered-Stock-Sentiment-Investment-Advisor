@@ -9,7 +9,7 @@ def get_investment_advice(sentiment_score, stock_data, sector):
     prompt = (
     f"Given the overall sentiment score of {sentiment_score} from news articles, and stock name and data {stock_data}, "
     f"considering that the company operates in the {sector} sector, "
-    f"what is your investment recommendation? What should an investor consider?"
+    f"what is your investment recommendation? what should an investor consider?"
 )
 
     response = openai.ChatCompletion.create(
